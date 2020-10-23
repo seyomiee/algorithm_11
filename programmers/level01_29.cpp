@@ -11,7 +11,6 @@ static int x(int x){
 }
 
 static int distance(float h, float n){
-  if(n==0) n=11;
   int h_x=x(h) ,h_y=ceil(h/3),
     n_x=x(n), n_y=ceil(n/3);
 
@@ -21,8 +20,9 @@ static int distance(float h, float n){
 }
 string solution(vector<int> numbers, string hand) {
     string answer = "";
-    int L=0,R=0;
+    int L=10,R=12;
     for( int n : numbers ){
+    if(n==0) n=11;
     if(n%3==1){
        answer+="L";
        L=n;
